@@ -1,14 +1,15 @@
 import os
+from typing import List
+
 from dotenv import load_dotenv
 from langchain.agents import create_agent
+from langchain.agents.structured_output import ToolStrategy
 from langchain.tools import tool
 from langchain_core.messages import HumanMessage
-from langchain_openai import ChatOpenAI
 from langchain_ollama import ChatOllama
-from langchain.agents.structured_output import ToolStrategy
-from tavily import TavilyClient
-from typing import List
+from langchain_openai import ChatOpenAI
 from pydantic import BaseModel, Field
+from tavily import TavilyClient
 
 load_dotenv()
 
@@ -69,8 +70,6 @@ if __name__ == "__main__":
 
 # https://docs.langchain.com/oss/python/langchain/agents
 # https://docs.langchain.com/oss/python/langchain/tools
-
-
 # https://docs.langchain.com/oss/python/langchain/structured-output
 """
 When a schema type is provided directly, LangChain automatically chooses:
